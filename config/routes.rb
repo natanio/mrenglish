@@ -1,5 +1,6 @@
 Mrenglish::Application.routes.draw do
 
+  devise_for :students
   root "pages#home"
 
   get "/home" , to: "pages#home", as: "home"
