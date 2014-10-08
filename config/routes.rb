@@ -2,11 +2,13 @@ Mrenglish::Application.routes.draw do
 
   devise_for :teachers, :controllers => { :registrations => 'registrations' }
   devise_for :students, :controllers => { :registrations => 'registrations' }
+  resources :users, only: [:index]
   root "pages#home"
 
   get "/home" , to: "pages#home", as: "home"
   get "about" => 'pages#about'
   get "contact" => 'pages#contact'
+  get "students" => 'students#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
