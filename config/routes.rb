@@ -1,7 +1,7 @@
 Mrenglish::Application.routes.draw do
 
-  devise_for :teachers
-  devise_for :students
+  devise_for :teachers, :controllers => { :registrations => 'registrations' }
+  devise_for :students, :controllers => { :registrations => 'registrations' }
   root "pages#home"
 
   get "/home" , to: "pages#home", as: "home"
