@@ -1,5 +1,6 @@
 Mrenglish::Application.routes.draw do
 
+  devise_for :teachers
   devise_for :students
   root "pages#home"
 
