@@ -11,19 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009084449) do
+ActiveRecord::Schema.define(version: 20141009083557) do
 
   create_table "bookings", force: true do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "length"
     t.integer  "study_group_id"
-  end
-
-  add_index "bookings", ["study_group_id"], name: "index_bookings_on_study_group_id"
-
-  create_table "classes", force: true do |t|
-    t.string "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "students", force: true do |t|
