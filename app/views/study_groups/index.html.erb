@@ -1,0 +1,11 @@
+<h3>study groups</h3>
+
+<% @study_groups.each do |study_group| %>
+  <div class="study_group">
+    <%= study_group.name %>
+    <%= link_to "Show all bookings", study_group_bookings_path(study_group) %>
+    <%= link_to "Delete", study_group_path(study_group), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%= link_to "Edit", edit_study_group_path(study_group) %>
+    <%= link_to "Add booking", new_study_group_booking_path(study_group) %>
+  </div>
+<% end %>

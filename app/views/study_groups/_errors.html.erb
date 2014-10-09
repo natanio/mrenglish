@@ -1,0 +1,13 @@
+<% if @study_group.errors.any? %>
+  <div class="errors">
+    <h3>
+      <%= pluralize(@study_group.errors.count, 'error') %>
+      prohibited this study_group from being saved:
+    </h3>
+    <ul>
+      <% @study_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

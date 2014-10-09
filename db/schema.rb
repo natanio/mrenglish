@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008065745) do
+ActiveRecord::Schema.define(version: 20141009084449) do
+
+  create_table "bookings", force: true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "length"
+    t.integer  "study_group_id"
+  end
+
+  add_index "bookings", ["study_group_id"], name: "index_bookings_on_study_group_id"
+
+  create_table "classes", force: true do |t|
+    t.string "name"
+  end
 
   create_table "students", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +46,10 @@ ActiveRecord::Schema.define(version: 20141008065745) do
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+
+  create_table "study_groups", force: true do |t|
+    t.string "name"
+  end
 
   create_table "teachers", force: true do |t|
     t.string   "email",                  default: "", null: false

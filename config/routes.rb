@@ -1,5 +1,8 @@
 Mrenglish::Application.routes.draw do
 
+  resources :study_groups do
+	  resources :bookings
+	end
   devise_for :teachers, :controllers => { :registrations => 'registrations' }
   devise_for :students, :controllers => { :registrations => 'registrations' }
   resources :users, only: [:index]
